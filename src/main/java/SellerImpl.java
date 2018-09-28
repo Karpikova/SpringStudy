@@ -1,3 +1,4 @@
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -7,6 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class SellerImpl implements Seller{
 
+    @Autowired
     public Shop shop;
 
     public void setShop(Shop shop) {
@@ -19,8 +21,7 @@ public class SellerImpl implements Seller{
 
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-//        SellerImpl seller = (SellerImpl) context.getBean("seller");
-        SellerImpl seller = (SellerImpl) context.getBean(Seller.class); //This way wasn't in Spring 2
+        SellerImpl seller = (SellerImpl) context.getBean(Seller.class);
         seller.printWorkStatusCertificate();
 
     }
