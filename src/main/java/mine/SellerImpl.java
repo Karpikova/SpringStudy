@@ -1,8 +1,7 @@
 package mine;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
 
 /**
@@ -24,8 +23,11 @@ public class SellerImpl implements Seller {
     }
 
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-        SellerImpl seller = (SellerImpl) context.getBean(Seller.class);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+        context.register(ConfForSeller.class, ConfForShop.class);
+        context.refresh();
+
+        SellerImpl seller = (SellerImpl) context.getBean("sellerName");
         seller.printWorkStatusCertificate();
 
     }
