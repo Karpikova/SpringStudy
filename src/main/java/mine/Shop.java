@@ -1,3 +1,5 @@
+package mine;
+
 /**
  * @author MKarpikova
  * @since 13.09.2018

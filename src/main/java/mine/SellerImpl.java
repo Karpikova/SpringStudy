@@ -1,12 +1,16 @@
+package mine;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Component;
 
 /**
  * @author MKarpikova
  * @since 13.09.2018
  */
-public class SellerImpl implements Seller{
+@Component
+public class SellerImpl implements Seller {
 
     @Autowired
     public Shop shop;
@@ -15,7 +19,7 @@ public class SellerImpl implements Seller{
         this.shop = shop;
     }
 
-    public void printWorkStatusCertificate(){
+    public void printWorkStatusCertificate() {
         System.out.println("She's working in " + shop.getName());
     }
 
