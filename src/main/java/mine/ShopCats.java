@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
  * @since 13.09.2018
  */
 @Component
-public class ShopImpl implements Shop {
+public class ShopCats implements Shop {
 
     private String name = "Cats shop";
 
