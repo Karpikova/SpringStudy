@@ -12,14 +12,14 @@ import org.springframework.stereotype.Component;
 public class SellerImpl implements Seller {
 
     @Autowired
-    public Shop shop;
+    public Shop shop2;
 
     public void setShop(Shop shop) {
-        this.shop = shop;
+        this.shop2 = shop;
     }
 
     public void printWorkStatusCertificate() {
-        System.out.println("She's working in " + shop.getName());
+        System.out.println("She's working in " + shop2.getName());
     }
 
     public static void main(String[] args) {
