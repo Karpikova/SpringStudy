@@ -1,6 +1,7 @@
 package mine;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
 
@@ -12,14 +13,15 @@ import org.springframework.stereotype.Component;
 public class SellerImpl implements Seller {
 
     @Autowired
-    public Shop shop2;
+    @Qualifier("lalala")
+    public Shop shop;
 
     public void setShop(Shop shop) {
-        this.shop2 = shop;
+        this.shop = shop;
     }
 
     public void printWorkStatusCertificate() {
-        System.out.println("She's working in " + shop2.getName());
+        System.out.println("She's working in " + shop.getName());
     }
 
     public static void main(String[] args) {
